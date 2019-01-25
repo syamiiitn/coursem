@@ -46,7 +46,7 @@ import { JavaComponent } from './java/java.component';
     SearchPipe,
     ClistComponent,
     JavaComponent,
-    SearchidPipe,
+    
    
   ],
   imports: [

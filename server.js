@@ -258,10 +258,49 @@ app.put('/admin/course',(req,res)=>{
                                                               }
                                                           })
 })
-  
+
+//delete operatino of courses in db
+app.delete('/admin/course',(req,res)=>{
+    console.log(req.body);
+dbo.collection('courses').remove({coursename:req.body.coursename},(err,success)=>{
+    if(err)
+    {
+        console.log('err is occure')
+    }
+    else
+    {
+        dbo.collection('courses').find({coursename:req.body.coursename}).toArray((err,data)=>{
+            if(err)
+            {
+                console.log('error is occure')
+            }
+            else
+            {
+                res.json(data);
+                console.log('data deleted');
+            }
+        })
+    }
+})
+})
+
+
+//get course data to java component from db
+app.get('/home/java',(req,res,next)=>{
+    dbo.collection('courses').find({name:s}).toArray((err,data)=>{
+        if(err)
+        {
+            console.log(err)
+        }
+        else{
+            res.json(data)
+        }
+    })
+})
 
 
 
-app.listen(process.env.PORT||8080,()=>{
+
+app.listen(2212,()=>{
     console.log('server is listening');
 });

@@ -49,11 +49,7 @@ export class CourseComponent implements OnInit  {
   this.h='';
   this.i='';
   }
-  Delete(v):void
-  {
-    console.log(v)
-    this.data.splice(v,1); 
-  }
+  
   editdata(v):void
   {
     this.t=true;
@@ -65,5 +61,10 @@ export class CourseComponent implements OnInit  {
      this.course.readData().subscribe(temp=>{this.data1=temp;
     console.log(this.data1)});
    }
+   Delete(i){
+   console.log(i);
+   
+     this.course.deletedata(i).subscribe(temp=>{})
   }
 
+}

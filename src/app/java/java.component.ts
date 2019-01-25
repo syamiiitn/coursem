@@ -1,5 +1,7 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import * as jspdf from 'jspdf' ;
+import { Router } from '@angular/router';
+import {JcourseService} from '../jcourse.service';
 @Component({
   selector: 'app-java',
   templateUrl: './java.component.html',
@@ -7,11 +9,14 @@ import * as jspdf from 'jspdf' ;
 providers: [{provide:'Window',useValue:window}]
 })
 export class JavaComponent implements OnInit {
+  data:any={};
 
-  constructor(@Inject('Window')private window:Window) { }
+ constructor(private router:Router,private jcourse:JcourseService) { }
 
-  ngOnInit() {
-  }
+  ngOnInit()
+   {
+    this.jcourse.readdata().subscribe(temp=>{this.data=temp
+    })  }
   download(){
     
      //download pdf
@@ -21,5 +26,8 @@ export class JavaComponent implements OnInit {
      doc.text(60,60,'Sampile File');
      doc.save('sample.pdf');
    }
+
+
  
 }
+

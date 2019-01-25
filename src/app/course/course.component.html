@@ -122,7 +122,7 @@
               <th>Update</th>
              
             </thead>
-            <tr *ngFor="let i of data;let x=index ;"  >
+            <tr *ngFor="let i of data"  >
               <td>{{i._id}}</td>
               <td>{{i.coursename}}</td>
               <td>{{i.authorname}}</td>
@@ -132,7 +132,7 @@
               <td>{{i.use}}</td>
               <td>{{i.samplefile}}</td>
               <td>{{i.mainfile}}</td>
-             <td><button (click)="Delete(x)" class="btn btn-danger" >X</button></td>
+             <td><button (click)="Delete(i)" class="btn btn-danger" >X</button></td>
              <td><button (click)="editdata(i)" class="btn btn-primary" data-toggle="modal" data-target="#m">Edit</button></td>
             </tr>
           </table>

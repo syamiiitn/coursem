@@ -1,0 +1,100 @@
+<div class="container">
+ <div class="jumbotron">
+  <div class="row">
+    <div class="col-sm-3"></div>
+     <div class="col-sm-6 mt-3 text-center">
+       <img src="assets/vivek.jpg" width="150px" height="150px" class="rounded-circle">
+     <h3 class="text-secondary">Profile</h3>
+      <table class="mr-5">
+          <thead>
+            <th></th>
+          </thead>
+       <tr *ngFor="let i of data">
+         <td>Name :</td>
+        <td>{{i.name}}</td>
+       </tr>
+      
+       <tr *ngFor="let i of data">
+          <td>Email :</td>
+          <td>{{i.email}}</td>
+        </tr>
+
+        <tr *ngFor="let i of data">
+            <td>Phone No :</td>
+            <td>{{i.contactno}}</td>
+          </tr>
+
+          <tr *ngFor="let i of data">
+            <td>Date Of Birth:</td>
+            <td>{{i.dateofbirth}}</td>
+            <button type="button" class="btn btn-info" data-toggle="modal" (click)="editprofile(i)" data-target="#u">UpdateProfile</button>
+          </tr>
+    </table>
+    <div class="float-right">
+    
+    </div>
+  </div>
+  <div class="col-sm-3"></div>
+</div>
+</div>
+
+
+    <div class="modal" id="u">
+     <div class="modal-dialog">
+      <div class="modal-content">
+       <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">X</button>
+       </div> 
+     <div class="modal-body"> 
+    <form #ref="ngForm">
+        <table>
+          <div class="form-group">
+            <tr>
+              <td>
+                <label for="f" class="text-dark pt-3">Enter Your Name :</label>
+              </td>
+              <td>
+                 <input type="text" id="f" class="form-control pt-4" name="name" placeholder="Enter here" [(ngModel)]="profiledata.name">
+               </td>
+             </tr>
+             <tr>
+                <td>
+                  <label for="f1" class="text-dark pt-3">Date Of Birth :</label>
+                </td>
+                <td>
+                   <input type="date" id="f1" class="form-control pt-4" name="dateofbirth" placeholder="Enter here" [(ngModel)]="profiledata.dateofbirth">
+                 </td>
+               </tr>
+               <tr>
+                  <td>
+                    <label for="f2" class="text-dark pt-3">Enter Email :</label>
+                  </td>
+                  <td>
+                     <input type="text" id="f2" class="form-control pt-4" name="email" placeholder="Enter here" [(ngModel)]="profiledata.email">
+                   </td>
+                 </tr>
+                
+                 <tr>
+                    <td>
+                      <label for="f3" class="text-dark pt-3">Contact Number</label>
+                    </td>
+                    <td>
+                       <input type="text" id="f3" class="form-control pt-4" name="contactno" placeholder="Enter here" [(ngModel)]="profiledata.contactno">
+                     </td>
+                 </tr>
+            </div>
+            
+          </table>
+      
+        </form>
+      </div> 
+       <div class="modal-footer">
+         <div class="text-left">
+          <button type="button" class="close" (click)="savedata(v)" data-dismiss="modal" class="btn btn-success">Submit</button>
+         </div>
+        </div>
+      </div>
+      </div>
+    </div>
+  </div>
+<router-outlet></router-outlet>

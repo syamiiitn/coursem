@@ -1,0 +1,9 @@
+[
+    {"customerid":1,"customername":"vivek","course":"java","price":5000,"email":"vivekvikky99","password":"vivek","gender":"male","mobilenumber":9505735470},
+    {"customerid":2,"customername":"raju","course":"java","price":5000, "email":"vivekvikky99","password":"vivek","gender":"male","mobilenumber":9505735470 },
+    {"customerid":3,"customername":"ramesh","course":"java","price":5000, "email":"vivekvikky99","password":"vivek","gender":"male","mobilenumber":9505735470},
+    {"customerid":4,"customername":"suresh","course":"java","price":5000, "email":"vivekvikky99","password":"vivek","gender":"male","mobilenumber":9505735470},
+    {"customerid":5,"customername":"akhil","course":"java","price":5000, "email":"vivekvikky99","password":"vivek","gender":"male","mobilenumber":9505735470}
+
+    
+]

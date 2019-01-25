@@ -1,0 +1,199 @@
+<div class="jumbotron bg-secondary">
+        
+         <h1 class="text-dark bg-info text-center ">Authors Detailes</h1>
+         
+         <form #ref="ngForm" (ngSubmit)="AddData(ref.value)">
+         <table class="mx-auto mt-5 text-dark ">
+         <tr>
+             <td>
+             <label for="one" class="text-white pt-4">Author Name :</label>
+             </td>
+             <td>
+             <input type="text" id="one" name="aname" placeholder="enter name here" class="form-control pd-5" [(ngModel)]=a1>
+             </td>
+         </tr>
+   
+         <tr>
+             <td>
+             <label for="four" class="text-white pt-4" >Author Detailes :  </label>
+             </td>
+             <td>
+             <textarea name="detailes" name="adetailes" id="four" rows="4" cols="4" placeholder="enter here" class="form-control pd-5" [(ngModel)]=b1></textarea>
+             </td>
+             </tr>
+         <tr>
+               <td>
+               <label for="five" class="text-white pt-4" >Author Image :  </label>
+               </td>
+               <td>
+               <input type="file" id="five" name="img" placeholder="place here" class="form-control pd-5" [(ngModel)]=c1>
+               </td>
+          </tr>
+   
+           <tr>
+                 <td>
+                 <label for="three" class="text-white pt-4" > Course name :  </label>
+                 </td>
+                 <td>
+                 <input type="text" id="three" name="cname" placeholder="enter name here" class="form-control pd-5" [(ngModel)]=d1 >
+                 </td>
+           </tr>
+   
+           <tr>
+               <td>
+               <label for="four" class="text-white pt-4" >Uses :  </label>
+               </td>
+               <td>
+               <textarea name="cmts" name="use" id="four" rows="4" cols="4" placeholder="enter here" class="form-control pd-5" [(ngModel)]=e1></textarea>
+               </td>
+               </tr>
+           <tr>
+           <tr>
+                 <td>
+                 <label for="five" class="text-white pt-4">Sample File :  </label>
+                 </td>
+                 <td>
+                 <input type="file" id="five" name="file" placeholder="place here" class="form-control pd-5" [(ngModel)]=f1>
+                 </td>
+           </tr>
+            
+           <tr>
+               <td>
+               <label for="five" class="text-white pt-4" >Main File :  </label>
+               </td>
+               <td>
+               <input type="file" id="five" name="mainfile" placeholder="place here" class="form-control pd-5" [(ngModel)]=g1>
+               </td>
+           </tr>
+   
+            <tr>
+               <td></td>
+                 <td> <button type="submit" class="btn btn-success" >Submit</button> 
+               </td>  
+            </tr>
+        </table> 
+      </form>
+      </div>
+
+
+     
+
+
+           <div class="jumbotron bg-warning">
+             <h1 class=" text-center mt-5 bg-info " style="text-decoration:indianred" >Added Authors List</h1>
+             <table class="table table pt-5">
+               <thead>
+                 <th>Author Name</th>
+                 <th>Auther Detailes</th>
+                 <th>Auther image</th>
+                 <th>Course Name</th>
+                 <th>Uses</th>
+                 <th>Sample File</th>
+                 <th>Main File</th>
+                 <th>Delete</th>
+                 <th>Update</th>
+               </thead>
+               <tr *ngFor="let i of obj;let in=index">
+                 <td>{{i.aname}}</td>
+                 <td>{{i.adetailes}}</td>
+                 <td>{{i.img}}</td>
+                 <td>{{i.cname}}</td>
+                 <td>{{i.use}}</td>
+                 <td>{{i.file}}</td>
+                 <td>{{i.mainfile}}</td>
+                 <td><button (click)="Delete(in)" class="btn btn-danger" >X</button></td>
+                 <td><button (click)="editdata(i)" class="btn btn-primary" data-toggle="modal" data-target="#m">Edit</button></td>
+               </tr>
+             </table>
+           </div>
+
+
+
+
+ <div class="modal" id="m">
+   <div class="modal-dialog">
+     <div class="modal-content">
+     <div class="modal-body">        
+           
+        <div *ngIf="t1">
+            <div class="jumbotron bg-info">
+            <h3 class="text-center" style="color:crimson; text-decoration:underline">Edit Detailes</h3>
+         <form #ref2="ngForm" (ngSubmit)="editdata(y1)">
+        <table class="mx-auto mt-5 text-dark ">
+            <tr>
+                <td>
+                <label for="one" class="text-white pt-4">Author Name :</label>
+                </td>
+                <td>
+                <input type="text" id="one" name="aname" placeholder="enter name here" class="form-control pd-5" [(ngModel)]=data.aname>
+                </td>
+            </tr>
+      
+            <tr>
+                <td>
+                <label for="four" class="text-white pt-4" >Author Detailes :  </label>
+                </td>
+                <td>
+                <textarea name="detailes" name="adetailes" id="four" rows="4" cols="4" placeholder="enter here" class="form-control pd-5" [(ngModel)]=data.adetailes></textarea>
+                </td>
+                </tr>
+            <tr>
+                  <td>
+                  <label for="five" class="text-white pt-4" >Author Image :  </label>
+                  </td>
+                  <td>
+                  <input type="file" id="five" name="img" placeholder="place here" class="form-control pd-5" [(ngModel)]=img>
+                  </td>
+             </tr>
+      
+              <tr>
+                    <td>
+                    <label for="three" class="text-white pt-4" > Course name :  </label>
+                    </td>
+                    <td>
+                    <input type="text" id="three" name="cname" placeholder="enter name here" class="form-control pd-5" [(ngModel)]=cname >
+                    </td>
+              </tr>
+      
+              <tr>
+                  <td>
+                  <label for="four" class="text-white pt-4" >Uses :  </label>
+                  </td>
+                  <td>
+                  <textarea name="cmts" name="use" id="four" rows="4" cols="4" placeholder="enter here" class="form-control pd-5" [(ngModel)]=use></textarea>
+                  </td>
+                  </tr>
+              <tr>
+              <tr>
+                    <td>
+                    <label for="five" class="text-white pt-4">Sample File :  </label>
+                    </td>
+                    <td>
+                    <input type="file" id="five" name="file" placeholder="place here" class="form-control pd-5" [(ngModel)]=file>
+                    </td>
+              </tr>
+               
+              <tr>
+                  <td>
+                  <label for="six" class="text-white pt-4" >Main File :  </label>
+                  </td>
+                  <td>
+                  <input type="file" id="six" name="mainfile" placeholder="place here" class="form-control pd-5" [(ngModel)]=mainfile>
+                  </td>
+              </tr>
+      
+               <tr>
+                  <td>
+                  <button type="submit" (click)="savedata(ref2.value)" class="btn btn-scucess">Save</button>
+                  </td>  
+               </tr>
+  
+            </table> 
+          </form>
+        </div>
+       </div>
+       </div>
+       </div>
+       </div>
+       </div>
+       <router-outlet></router-outlet>

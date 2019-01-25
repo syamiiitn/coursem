@@ -1,0 +1,261 @@
+
+   
+   <div class="jumbotron bg-secondary">
+     <div style="background-image:url(assets/.jpg)">
+      <h1 class="text-dark bg-info text-center ">Courses Operations</h1>
+      <button type="button" class="btn btn-warning" data-toggle="collapse" data-target="#c">Add Courses</button> 
+      <div class="collapse" id="c">
+          <!-- <    adding> -->
+      <div class="jumbotron bg-info">
+    <h3 class="text-center" style="text-decoration:underline ; color:blue;">ADD Courses</h3>
+  
+  
+    <form #ref="ngForm" (ngSubmit)="from(ref.value)">
+      <table class="mx-auto mt-5 text-dark ">
+      <tr>
+          <td>
+          <label for="one" class="text-white pt-4">Course Name :</label>
+          </td>
+          <td>
+          <input type="text" id="one" name="coursename" placeholder="enter name here" class="form-control pd-5" [(ngModel)]=a>
+          </td>
+      </tr>
+
+      <tr>
+          <td>
+          <label for="four" class="text-white pt-4" >Courses Details :  </label>
+          </td>
+          <td>
+          <textarea name ="cmnts"  name="cdetailes" id="four" rows="4" cols="4" placeholder="enter here" class="form-control pd-5" [(ngModel)]=b></textarea>
+          </td>
+      </tr>
+
+      <tr>
+          <td>
+          <label for="two" class="text-white pt-4" >Course Author :  </label>
+         </td>
+          <td>
+          <input type="text" id="two" name="authorname" placeholder="enter name here" class="form-control pd-5" [(ngModel)]=c >
+          </td>
+     </tr>
+      
+      <tr>
+          <td>
+          <label for="four" class="text-white pt-4" >Author Detailes :  </label>
+          </td>
+          <td>
+          <textarea name ="cmnts"  name="adetailes" id="four" rows="4" cols="4" placeholder="enter here" class="form-control pd-5"[(ngModel)]=d></textarea>
+          </td>
+          </tr>
+      <tr>
+            <td>
+            <label for="five" class="text-white pt-4" >Author Image :  </label>
+            </td>
+            <td>
+            <input type="file" id="five" name="img" placeholder="place here" class="form-control pd-5"[(ngModel)]=e>
+            </td>
+       </tr>
+
+        <tr>
+              <td>
+              <label for="three" class="text-white pt-4" > Enter Price :  </label>
+              </td>
+              <td>
+              <input type="text" id="three" name="price" placeholder="enter name here" class="form-control pd-5"[(ngModel)]=f >
+              </td>
+        </tr>
+
+        <tr>
+            <td>
+            <label for="four" class="text-white pt-4" >Uses :  </label>
+            </td>
+            <td>
+            <textarea name ="cmnts"  name="use" id="four" rows="4" cols="4" placeholder="enter here" class="form-control pd-5"[(ngModel)]=g></textarea> 
+            </td>
+            </tr>
+        <tr>
+        <tr>
+              <td>
+              <label for="five" class="text-white pt-4">Sample File :  </label>
+              </td>
+              <td>
+              <input type="file" id="five" name="samplefile" placeholder="place here" class="form-control pd-5" [(ngModel)]=h>
+              </td>
+        </tr>
+         
+        <tr>
+            <td>
+            <label for="five" class="text-white pt-4" >Main File :  </label>
+            </td>
+            <td>
+            <input type="file" id="five" name="mainfile" placeholder="place here" class="form-control pd-5" [(ngModel)]=i>
+            </td>
+        </tr>
+
+         <tr>
+            <td></td>
+              <td> <button type="submit" class="btn btn-success" >Send</button> 
+            </td>  
+         </tr>
+          </table>
+        </form> 
+        </div>
+    </div>
+
+      
+    
+
+          <div class="jumbotron bg-success">
+          <h1 class="text-danger text-center pt-5 " style="text-decoration:underline" >Courses Detailes</h1>
+          <table class="table table pt-5">
+            <thead>
+              <th>Courseid</th>
+              <th>Course Name</th>
+              <th>Author Name</th>
+              <th>Auther Detailes</th>
+              <th>Author Image</th>
+              <th>Price</th>
+              <th>Uses</th>
+              <th>Sample File</th>
+              <th>Main File </th>
+              <th>Delete</th>
+              <th>Update</th>
+             
+            </thead>
+            <tr *ngFor="let i of data;let x=index ;"  >
+              <td>{{i._id}}</td>
+              <td>{{i.coursename}}</td>
+              <td>{{i.authorname}}</td>
+              <td>{{i.adetailes}}</td>
+              <td>{{i.img}}</td>
+              <td>{{i.price}}</td>
+              <td>{{i.use}}</td>
+              <td>{{i.samplefile}}</td>
+              <td>{{i.mainfile}}</td>
+             <td><button (click)="Delete(x)" class="btn btn-danger" >X</button></td>
+             <td><button (click)="editdata(i)" class="btn btn-primary" data-toggle="modal" data-target="#m">Edit</button></td>
+            </tr>
+          </table>
+          <router-outlet></router-outlet>
+     </div>
+    </div>
+
+
+
+
+
+    <div class="modal" id="m">
+            <div class="modal-dialog">
+            <div class="modal-content">
+            <div class="modal-body">
+                
+                   <div *ngIf="t">
+                    <div class="jumbotron bg-secondary">
+                        <h3 class="text-center" style="text-decoration:underline ; color:darkmagenta;">Edit Courses</h3>
+                          <form #ref2="ngForm" >
+                             <table class="mx-auto mt-5 text-dark ">
+                        <!-- <tr>
+                        <td>
+                        <label for="one" class="text-white pt-4">Course Id :</label>
+                        </td>
+                        <td>
+                        <input type="text" id="one" name="courseid" placeholder="enter name here" class="form-control pd-5" [(ngModel)]=data1._id>
+                        </td>
+                    </tr>
+               -->
+                    <tr>
+                        <td>
+                        <label for="four" class="text-white pt-4" >Courses Name :  </label>
+                        </td>
+                        <td>
+                        <input type="text" name="coursename" id="four" placeholder="enter here" class="form-control pd-5" [(ngModel)]=data1.coursename >
+                        </td>
+                    </tr>
+                
+                    <tr>
+                        <td>
+                        <label for="four" class="text-white pt-4" >Courses Details :  </label>
+                        </td>
+                        <td>
+                        <textarea name ="cmnts" name="cdetailes" id="four" rows="4" cols="4" placeholder="enter here" class="form-control pd-5" [(ngModel)]=data1.cdetailes></textarea>
+                        </td>
+                    </tr>
+            
+            
+                    <tr>
+                        <td>
+                        <label for="two" class="text-white pt-4" >Course Author :  </label>
+                       </td>
+                        <td>
+                        <input type="text" id="two" name="authorname" placeholder="enter name here" class="form-control pd-5" [(ngModel)]=data1.authorname >
+                        </td>
+                   </tr>
+                    
+                    <tr>
+                        <td>
+                        <label for="four" class="text-white pt-4" >Author Detailes :  </label>
+                        </td>
+                        <td>
+                        <textarea name ="cmnts" name="adetailes" id="four" rows="4" cols="4" placeholder="enter here" class="form-control pd-5" [(ngModel)]=data1.adetailes></textarea>
+                        </td>
+                        </tr>
+                    <tr>
+                          <td>
+                          <label for="five" class="text-white pt-4" >Author Image :  </label>
+                          </td>
+                          <td>
+                          <input type="file" id="five" name="img" placeholder="place here" class="form-control pd-5" [(ngModel)]=data1.img >
+                          </td>
+                     </tr>
+              
+                      <tr>
+                            <td>
+                            <label for="three" class="text-white pt-4" > Enter Price :  </label>
+                            </td>
+                            <td>
+                            <input type="text" id="three" name="price" placeholder="enter name here" class="form-control pd-5"[(ngModel)]=data1.price >
+                            </td>
+                      </tr>
+              
+                      <tr>
+                          <td>
+                          <label for="four" class="text-white pt-4" >Uses :  </label>
+                          </td>
+                          <td>
+                          <textarea name ="cmnts"  name="use" id="four" rows="4" cols="4" placeholder="enter here" class="form-control pd-5" [(ngModel)]=data1.use></textarea>
+                          </td>
+                          </tr>
+                      <tr>
+                      <tr>
+                            <td>
+                            <label for="five" class="text-white pt-4">Sample File :  </label>
+                            </td>
+                            <td>
+                            <input type="file" id="five" name="samplefile" placeholder="place here" class="form-control pd-5" [(ngModel)]=data1.samplefile>
+                            </td>
+                      </tr>
+                       
+                      <tr>
+                          <td>
+                          <label for="five" class="text-white pt-4" >Main File :  </label>
+                          </td>
+                          <td>
+                          <input type="file" id="five" name="mainfile" placeholder="place here" class="form-control pd-5" [(ngModel)]=data1.mainfile>
+                          </td>
+                      </tr>
+                     <tr>
+                         <button type="button" (click)="saveData(v)"  class="close" data-dismiss="modal" class="btn btn-scucess">Save</button>
+                             
+                    </tr>
+                </table> 
+            </form>
+            </div>
+            </div>
+            </div>
+            "cdetailes": "jldvgls"
+            </div>
+            </div>
+            </div>
+            
+            
+            

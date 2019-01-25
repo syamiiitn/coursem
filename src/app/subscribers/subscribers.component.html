@@ -1,0 +1,100 @@
+<div class="jumbotron bg-secondary">
+ <h1 class="text-danger text-center pt-5 " style="text-decoration:underline" >Subscribers Detailes</h1>
+
+ <div class="row">
+    <div class="col-sm-3"></div>
+
+      <div class="col-sm-6 text-center">
+        <div class="jumbotron bg-info">
+   
+           <input type="text" class="form-control" placeholder="search....." name="searchTerm" [(ngModel)]=searchTerm>
+   
+        </div>
+     </div>
+    <div class="col-sm-3"></div>
+ </div>
+
+
+
+ <table class="table table pt-5">
+   <thead>
+     <th>CustomarId</th>
+     <th>Customer Name</th>
+     <th>Email</th>
+     <th>Gender</th>
+     <td><b>Mobile Number</b></td>
+   </thead>
+   <tr *ngFor="let i of data | search:searchTerm || serachid:searchTerm">
+     <td>{{i._id}}</td>
+     <td>{{i.name}}</td>
+     <td>{{i.email}}</td>
+    <td>{{i.gender}}</td>
+     <td>{{i.contactno}}</td>
+   </tr>
+ </table>
+ <router-outlet></router-outlet>
+<!-- <div class="mt-5">
+ <form #ref="ngForm" (ngSubmit)="AddData(ref.value)">
+  <table class="mx-auto mt-5 text-dark ">
+  <tr>
+      <td>
+      <label for="one" class="text-white pt-4">CustomarId :</label>
+      </td>
+      <td>
+      <input type="text" id="one" name="customerid" placeholder="enter name here" class="form-control pd-5" [(ngModel)]=a>
+      </td>
+  </tr>
+
+  <tr>
+      <td>
+      <label for="four" class="text-white pt-4" >Customer Name :  </label>
+      </td>
+      <td>
+      <input type="text" name="customername" id="four" rows="4" cols="4" placeholder="enter here" class="form-control pd-5" [(ngModel)]=b>
+      </td>
+  </tr>
+
+  <tr>
+      <td>
+      <label for="two" class="text-white pt-4" >Email :  </label>
+     </td>
+      <td>
+      <input type="text" id="two" name="email" placeholder="enter name here" class="form-control pd-5" [(ngModel)]=c >
+      </td>
+ </tr>
+  
+  <tr>
+      <td>
+      <label for="four" class="text-white pt-4" >Password :  </label>
+      </td>
+      <td>
+      <input type="text" name="password" id="four" rows="4" cols="4" placeholder="enter here" class="form-control pd-5"[(ngModel)]=d>
+      </td>
+      </tr>
+  <tr>
+        <td>
+        <label for="five" class="text-white pt-4" >Gender :  </label>
+        </td>
+        <td>
+        <input type="file" id="five" name="gender" placeholder="place here" class="form-control pd-5"[(ngModel)]=e>
+        </td>
+   </tr>
+
+    <tr>
+          <td>
+          <label for="three" class="text-white pt-4" > Mobile Number :  </label>
+          </td>
+          <td>
+          <input type="text" id="three" name="price" placeholder="enter name here" class="form-control pd-5"[(ngModel)]=f >
+          </td>
+    </tr>
+
+     <tr>
+        <td></td>
+          <td> <button type="submit" class="btn btn-success" >Add</button> 
+        </td>  
+     </tr>
+      </table>
+    </form> 
+    </div>
+   -->

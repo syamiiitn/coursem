@@ -1,0 +1,60 @@
+ 
+ <div class="container-fluid">
+   <!-- <div class="jumbotron" style="background-color:skyblue"> -->
+     <h1 class="text-center font-weight-bolt" style="color:indigo">COURSE WALA</h1>
+    <marquee behavior="scroll=20" direction="right" class="bg-white" style="color:darkslateblue"><h2>WELCOME TO COURSE WALA</h2></marquee>
+    
+  <nav class="navbar navbar-expand-md navbar-dark bg-dark sticky-top">
+    <a routerLink='carousel'><img class="mr-5" src="assets/icon.png" width="75px" height="75px" class="img-fluid"></a>
+    <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#v">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="v">
+    <ul class="navbar-nav">
+     
+    
+      <li class="nav-item">
+        <a class="nav-link"  class="mr-5 text-white ml-3" routerLink="whythis">whythis</a>
+      </li>
+      
+      <li class="dropdown">
+          <a href="" class="dropdown-toggle mr-5 text-white"  data-toggle="dropdown">
+            Courses
+          </a>
+          <div class="dropdown-menu">
+            <a class="dropdown-item"  href="#">C</a>
+            <a class="dropdown-item" routerLink="home/clist" href="#">C++</a>
+            <a class="dropdown-item" routerLink="home/java" href="#j">JAVA</a>
+            <a class="dropdown-item" routerLink="home/clist" href="#c">CSS</a>
+            <a class="dropdown-item" href="#">HTML</a>
+            <a class="dropdown-item" href="#">ANGULAR</a>
+          </div>
+        </li>
+     
+      <li class="nav-item">
+        <a class="nav-link"  class="mr-5 text-white" routerLink="authors">Authors</a>
+      </li>
+
+    <li class="nav-item">
+      <input type="text" class="mr-5" placeholder="search...">
+    </li>
+
+
+      
+      <li class="nav-item">
+        <a class="nav-link"    class="mr-5 text-white" routerLink="login">Login</a>
+      </li>
+      
+      <li class="nav-item">
+        <a class="nav-link"   class="mr-5 text-white" routerLink="registration">Registation</a>
+      </li>
+    </ul>
+  </div>
+  </nav>
+  <router-outlet></router-outlet>
+  </div>
+<div>
+<!-- </div> -->
+</div>
+

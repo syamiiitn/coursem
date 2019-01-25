@@ -1,0 +1,38 @@
+
+
+
+<div class="jumbotron bg-secondary">
+  <!-- <button type="button" class="btn btn-success" (click)="ngOnInit()">Send</button> -->
+  <div class="row">
+      <div class="col-sm-3"></div>
+  
+        <div class="col-sm-6 text-center">
+          <div class="jumbotron bg-info">
+     
+             <input type="text" class="form-control" placeholder="search....." name="searchTerm" [(ngModel)]=searchTerm>
+     
+          </div>
+       </div>
+      <div class="col-sm-3"></div>
+   </div>
+  
+
+  <table class="table table">
+
+  <thead>
+    <th>Sno</th>
+    <th>ItemId</th>
+    <th>Course-Name</th>
+    <th>cost</th>
+    <th>Buy</th>
+  </thead>
+
+  <tr *ngFor="let i of data | search:searchTerm">
+    <td>{{i.sno}}</td>
+    <td>{{i.itemid}}</td>
+    <td>{{i.coursename}}</td>
+    <td>{{i.cost}}</td>
+    <button type="button" class="btn btn-info">Buy</button>
+  </tr>
+</table>
+</div>

@@ -286,17 +286,17 @@ dbo.collection('courses').remove({coursename:req.body.coursename},(err,success)=
 
 
 //get course data to java component from db
-app.get('/home/java',(req,res,next)=>{
-    dbo.collection('courses').find({name:s}).toArray((err,data)=>{
-        if(err)
-        {
-            console.log(err)
-        }
-        else{
-            res.json(data)
-        }
-    })
-})
+// app.get('/home/java',(req,res,next)=>{
+//     dbo.collection('courses').find({name:s}).toArray((err,data)=>{
+//         if(err)
+//         {
+//             console.log(err)
+//         }
+//         else{
+//             res.json(data)
+//         }
+//     })
+// })
 
 
 

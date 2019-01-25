@@ -8,15 +8,15 @@ import {JcourseService} from '../jcourse.service';
   styleUrls: ['./java.component.css'],
 providers: [{provide:'Window',useValue:window}]
 })
-export class JavaComponent implements OnInit {
+export class JavaComponent  {
   data:any={};
 
  constructor(private router:Router,private jcourse:JcourseService) { }
 
-  ngOnInit()
-   {
-    this.jcourse.readdata().subscribe(temp=>{this.data=temp
-    })  }
+  // ngOnInit()
+  //  {
+  //   this.jcourse.readdata().subscribe(temp=>{this.data=temp
+  //   })  }
   download(){
     
      //download pdf

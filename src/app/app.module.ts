@@ -24,7 +24,7 @@ import { SearchPipe } from './search.pipe';
   import { from } from 'rxjs/internal/observable/from';
 import { ClistComponent } from './clist/clist.component';
 import { JavaComponent } from './java/java.component';
-import { SearchidPipe } from './searchid.pipe';
+
 @NgModule({
   declarations: [
     AppComponent,

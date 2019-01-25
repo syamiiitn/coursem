@@ -12,9 +12,9 @@ export class RegistrationComponent {
   email:string;
   password:string;
   confirmpassword:string;
-  dateofbirth:string;
+  dateofbirth:number;;
   gender:string;
-  contactno:string;
+  contactno:number;
 
   constructor(private router:Router,private register:RegisterService) { }
 

@@ -28,7 +28,7 @@
     <th>Gender</th>
     <th>Mobile Number</th> 
   </thead>
-  <tr *ngFor="let i of data | search:searchTerm || searchid:serachTerm ">
+  <tr *ngFor="let i of data | search:searchTerm ">
     <td>{{i.customerid}}</td>
     <td>{{i.customername}}</td>
     <td>{{i.course}}</td>

@@ -8,8 +8,13 @@ import { log } from 'util';
   styleUrls: ['./userprofile.component.css']
 })
 export class UserprofileComponent implements OnInit {
-  data:object[]=[];
+  data:any={};
   profiledata:any={};
+  name:string;
+  email:string;
+  dateofbirth:number;
+  contactno:number;
+
 
   constructor(private userprofile:UserprofileService) { }
 
@@ -26,7 +31,7 @@ export class UserprofileComponent implements OnInit {
 
    
   }
-  savedata(v)
+  savedata()
   {
    this.userprofile.readsaveprofile(this.profiledata);
    this.userprofile.readProfile().subscribe(temp=>{this.profiledata=temp;}) 

@@ -9,7 +9,7 @@ import { DataService } from 'src/app/data.service';
 export class PurchagersComponent implements OnInit {
   data:object[]=[];
   searchTerm:string;
-  searchid:string;
+  
  
   constructor(private ds:DataService) { }
  

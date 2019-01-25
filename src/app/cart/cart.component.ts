@@ -8,6 +8,7 @@ import { DataService } from 'src/app/data.service';
 })
 export class CartComponent implements OnInit {
    data:object[]=[];
+   searchTerm:string;
   constructor(private ds:DataService) { }
 
   ngOnInit() 

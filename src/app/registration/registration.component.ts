@@ -8,6 +8,12 @@ import { RegisterService } from '../register.service'
   styleUrls: ['./registration.component.css']
 })
 export class RegistrationComponent {
+  name:string;
+  email:string;
+  password:string;
+  conformpassword:string;
+  dateofbirth:string;
+  gender:string;
 
   constructor(private router:Router,private register:RegisterService) { }
 

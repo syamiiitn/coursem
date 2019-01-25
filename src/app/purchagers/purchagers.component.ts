@@ -7,7 +7,7 @@ import { DataService } from 'src/app/data.service';
   styleUrls: ['./purchagers.component.css']
 })
 export class PurchagersComponent implements OnInit {
-
+  searchTerm:string;
   data:object[]=[];
   constructor(private ds:DataService) { }
  

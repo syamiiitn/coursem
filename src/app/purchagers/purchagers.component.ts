@@ -7,8 +7,10 @@ import { DataService } from 'src/app/data.service';
   styleUrls: ['./purchagers.component.css']
 })
 export class PurchagersComponent implements OnInit {
-  searchTerm:string;
   data:object[]=[];
+  searchTerm:string;
+  searchid:string;
+ 
   constructor(private ds:DataService) { }
  
   ngOnInit() 

@@ -16,5 +16,11 @@ export class AdminComponent implements OnInit {
       this.router.navigate(['home/login'])
     }
   }
+  logout()
+  {
+   var a= localStorage.removeItem('idToken');
+   
+   this.router.navigate (['home/login'])
+  }
 
 }

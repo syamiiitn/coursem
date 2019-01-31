@@ -13,7 +13,7 @@ export class LoginService {
   {
     console.log(v);
     this.http.post('api/home/login',v).subscribe(res=>{     
-          localStorage.setItem('idToken',res['idToken']);    
+             
 
         if(res=="user not existed")
         {
@@ -27,10 +27,18 @@ export class LoginService {
         }
         else
         {
+          localStorage.setItem('idToken',res['idToken']); 
           alert("login successfully");
-          this.router.navigate(["user"])
+
+           if(v.name=="vivekgoud" && v.password=="vivekgoud2212")
+             {
+             this.router.navigate(["admin"])
+             }
+         else 
+           {
+           this.router.navigate(["user"])
+          }
         }
-        
       })
   }
 }

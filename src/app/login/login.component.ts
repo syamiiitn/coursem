@@ -46,14 +46,7 @@ export class LoginComponent implements OnInit {
     }
   readUser(v)
   {
-    if(v.name=="vivekgoud" && v.password=="vivekgoud2212")
-    {
-      this.router.navigate(["admin"])
-    }
-    else 
-    {
-      this.loginservice.readLogin(v);
-    }
+    this.loginservice.readLogin(v);
    // console.log(v);
     this.name="";
     this.password="";

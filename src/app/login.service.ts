@@ -12,14 +12,25 @@ export class LoginService {
   readLogin(v)
   {
     console.log(v);
-    this.http.post('user/login',v).subscribe(temp=>
-      {
-        alert(temp)
-        console.log(temp)
-        if(temp=="logged in successfully")
+    this.http.post('api/home/login',v).subscribe(res=>{     
+          localStorage.setItem('idToken',res['idToken']);    
+
+        if(res=="user not existed")
         {
-          this.router.navigate(["user"]);
+          alert("user not existed")
+         this.router.navigate(["home/login"])
         }
+        else if(res=="wrong password")
+        {
+          alert("wrong password")
+          this.router.navigate(["home/login"]);
+        }
+        else
+        {
+          alert("login successfully");
+          this.router.navigate(["user"])
+        }
+        
       })
   }
 }

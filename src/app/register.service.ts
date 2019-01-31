@@ -13,7 +13,7 @@ export class RegisterService {
 submit(v)
 {
   console.log(v);
-  this.http.post('home/registration',v).subscribe(temp=>{alert(temp)
+  this.http.post('api/home/registration',v).subscribe(temp=>{alert(temp)
 
     if(temp='registered successfully')
     {

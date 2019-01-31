@@ -9,10 +9,19 @@ import { Observable } from 'rxjs/internal/Observable';
 export class JcourseService {
 
   constructor(private router:Router,private http:HttpClient) { }
-  // readdata():Observable<any>
-  // {
-  //   return this.http.get<any>('home/java');
-  // }
+
+  readdata():Observable<any>
+  {
+    console.log();
+    return this.http.get<any>('api/user/java');
+    
+  }
+
+
+  readdata1(v)
+  {
+    this.http.post('api/user/java',v).subscribe(temp=>{console.log(temp)});
+  }
 
 }
 

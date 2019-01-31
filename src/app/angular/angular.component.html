@@ -1,0 +1,67 @@
+
+<div class="container-fluid">
+  <div class="jumbotron " style="background-color:cornflowerblue">
+   
+  
+    
+  <div class="row">
+      <div class="col-sm">
+         <h3 class="text-center" style="color:darkred; text-decoration:underline">ANGULAR</h3>
+      </div>
+  </div> 
+  
+       <div class="row">
+         <div class="col-sm-2"></div>
+         <div class="col-sm-4 mt-5">
+          <img src="assets/anngu.png" width="250px" height="250">
+      </div>
+           <div class="col-sm-4 mt-5">
+           
+          
+            <p>Angular is a TypeScript-based open-source front-end web application framework led by the Angular Team at Google and by a community of individuals and corporations. Angular is a complete rewrite from the same team that built AngularJS</p>
+            <p>The main Angular advantages over its closest rival, KnockoutJS, are: No need to use observable functions; Angular analyses the page DOM and builds the bindings based on the Angular-specific element attributes. That requires less writing, the code is cleaner, easier to understand and less error prone.</p>
+                <h3>Contents</h3>
+                Introduction
+                <p></p>
+                <p></p>
+                 
+                
+          </div>
+          
+          
+          <div class="col-sm-1"></div>
+        </div>
+        
+  
+        <div class="row ">
+          <div class="col-sm-2"></div>
+           <div class="col-sm-6">
+             
+             
+             <button type="button" class="btn btn-success form-control" (click)="download()">Sample File</button>
+             
+            
+           </div>
+           
+           
+  
+        </div>
+        <div class="table-responsive-sm mt-5">
+          <table class="table table-striped">
+            <thead>
+              <th>Course-Name</th>
+              <th>Price</th>
+              <th>Add</th>
+            </thead>
+            <tr *ngFor="let i of data">
+             <td>{{i.coursename}}</td>
+             <td>{{i.price}}</td>
+              <button type="button" class="btn btn-success" (click)="addCart(i)">Add TO Cart</button>
+            </tr>
+          </table>
+        </div>
+      </div>
+        <router-outlet></router-outlet>
+    
+  
+  

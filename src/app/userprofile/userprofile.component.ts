@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UserprofileService } from 'src/app/userprofile.service';
 import { log } from 'util';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-userprofile',
@@ -8,7 +9,7 @@ import { log } from 'util';
   styleUrls: ['./userprofile.component.css']
 })
 export class UserprofileComponent implements OnInit {
-  data:any={};
+  data:any[]=[];
   profiledata:any={};
   name:string;
   email:string;
@@ -16,12 +17,24 @@ export class UserprofileComponent implements OnInit {
   contactno:number;
 
 
-  constructor(private userprofile:UserprofileService) { }
+  constructor(private userprofile:UserprofileService,private router:Router) { }
 
   //receive data from server
   ngOnInit() 
   {
-   this.userprofile.readProfile().subscribe(temp=>{this.data=temp})
+   this.userprofile.readProfile().subscribe(temp=>{
+    console.log(temp);
+    
+     if(temp['message']=="token is not valid")
+     {
+      alert(temp['message']);
+       this.router.navigate(['home/login']);
+     }
+     else
+     {
+      this.data=temp;
+     }
+   })
    
   }
   editprofile(v)

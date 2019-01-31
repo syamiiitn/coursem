@@ -11,7 +11,7 @@ export class SubscribersService  {
   constructor(private http:HttpClient) { }
 read():Observable<any>
 {
-  return this.http.get('/admin/subscribers');
+  return this.http.get('api/admin/subscribers');
 
 }
 

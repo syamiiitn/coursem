@@ -1,0 +1,73 @@
+<div class="container-fluid">
+  <div class="jumbotron " style="background-color:dodgerblue">
+   
+  
+    
+  <div class="row">
+      <div class="col-sm">
+         <h3 class="text-center" style="color:blueviolet; text-decoration:underline">HTML</h3>
+      </div>
+  </div> 
+  
+       <div class="row">
+         <div class="col-sm-2"></div>
+           
+         <div class="col-sm-4 mt-5">
+          <img src="assets/HTML5.png" width="280px" height="250">
+      </div>
+           <div class="col-sm-4 mt-5">
+            <p>Hypertext Markup Language is the standard markup language for creating web pages and web applications. With Cascading Style Sheets and JavaScript, it forms a triad of cornerstone technologies for the World Wide Web. </p>
+            <ol>
+              <li>HTML stands for Hyper Text Markup Language</li>
+              <li>HTML describes the structure of Web pages using markup</li>
+              <li>HTML elements are the building blocks of HTML pages</li>
+              <li>HTML elements are represented by tags</li>
+              <li>HTML tags label pieces of content such as "heading", "paragraph", "table", and so on</li>
+              <li>Browsers do not display the HTML tags, but use them to render the content of the page</li>
+                
+            </ol>
+          
+              
+                <h3>Contents</h3>
+                Introduction
+                <p></p>
+                <p></p>
+                 
+                
+          </div>
+        
+          <div class="col-sm-1"></div>
+        </div>
+        
+  
+        <div class="row mt-" >
+          <div class="col-sm-2"></div>
+           <div class="col-sm-6">
+             
+             
+             <button type="button" class="btn btn-success form-control" (click)="download()">Sample File</button>
+             
+            
+           </div>
+           
+           
+  
+        </div>
+        <div class="table-responsive-sm mt-5">
+          <table class="table table-striped">
+            <thead>
+              <th>Course-Name</th>
+              <th>Price</th>
+              <th>Add</th>
+            </thead>
+            <tr *ngFor="let i of data">
+             <td>{{i.coursename}}</td>
+             <td>{{i.price}}</td>
+              <button type="button" class="btn btn-success" (click)="addCart(i)">Add TO Cart</button>
+            </tr>
+          </table>
+        </div>
+      </div>
+        <router-outlet></router-outlet>
+    
+  

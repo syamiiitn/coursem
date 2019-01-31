@@ -3,6 +3,7 @@
          <h1 class="text-dark bg-info text-center ">Authors Detailes</h1>
          
          <form #ref="ngForm" (ngSubmit)="AddData(ref.value)">
+             
          <table class="mx-auto mt-5 text-dark ">
          <tr>
              <td>
@@ -81,6 +82,7 @@
 
            <div class="jumbotron bg-warning">
              <h1 class=" text-center mt-5 bg-info " style="text-decoration:indianred" >Added Authors List</h1>
+             <div class="table-responsive">
              <table class="table table pt-5">
                <thead>
                  <th>Author Name</th>
@@ -105,6 +107,7 @@
                  <td><button (click)="editdata(i)" class="btn btn-primary" data-toggle="modal" data-target="#m">Edit</button></td>
                </tr>
              </table>
+             </div>
            </div>
 
 
@@ -184,7 +187,7 @@
       
                <tr>
                   <td>
-                  <button type="submit" (click)="savedata(ref2.value)" class="btn btn-scucess">Save</button>
+                  <button type="submit" (click)="savedata(ref2.value)" data-dismiss="modal"  class="close btn btn-scucess">Save</button>
                   </td>  
                </tr>
   

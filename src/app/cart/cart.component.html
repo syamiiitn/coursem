@@ -21,18 +21,44 @@
 
   <thead>
     <th>Sno</th>
-    <th>ItemId</th>
     <th>Course-Name</th>
     <th>cost</th>
     <th>Buy</th>
   </thead>
 
-  <tr *ngFor="let i of data | search:searchTerm">
-    <td>{{i.sno}}</td>
-    <td>{{i.itemid}}</td>
+  <tr *ngFor="let i of data | search1:searchTerm;let in=index;">
+    <td>{{in+1}}</td>
     <td>{{i.coursename}}</td>
-    <td>{{i.cost}}</td>
-    <button type="button" class="btn btn-info">Buy</button>
+    <td>{{i.price}}</td>
+    <button type="button" class="btn btn-info" data-toggle="modal" data-target="#k">Buy</button>
   </tr>
 </table>
+</div>
+
+
+<!-- Buy button -->
+
+<div class="modal" id="k">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+        <div class="jumbotron" style="background-color:aquamarine">
+         <div class="modal-header">
+           <div class="margin-right">
+            <button type="button" class="close d-block " style="margin-left:675px;" class="btn btn-danger" data-dismiss="modal">X</button>
+           </div>
+          </div>
+       <div class="modal-body">
+        
+          <div class="text--center" style="color:blueviolet">
+            <h3>Your Online Transection is Success</h3>
+            <div class="mt-5" >
+                <button type="button" class="btn btn-success mx-auto" class="close" data-dismiss="madal" (click)="download()" data-dismiss="modal" >Download File</button>
+            </div>
+        
+            </div>
+         </div>
+
+    </div>
+  </div>
+  </div>
 </div>

@@ -15,24 +15,24 @@ export class CourseService  {
   sendData(v)
   {
     console.log(v);
-    this.http.post('admin/course',v).subscribe(temp=>{alert(temp)
+    this.http.post('api/admin/course',v).subscribe(temp=>{alert(temp)
   })
  
 }
 readData():Observable<any>
 {
-  return this.http.get<any>('admin/course');
+  return this.http.get<any>('api/admin/course');
 }
 saveupdated(v)
 {
-  this.http.put('admin/course',v).subscribe();
+  this.http.put('api/admin/course',v).subscribe();
   console.log(v);
 }
 deletedata(v):Observable<any>
 {
  var httpoptions={
    headers:new HttpHeaders({'Content-Type':'application/json'}),body:v }
-   return this.http.delete<any[]>('admin/course',httpoptions);
+   return this.http.delete<any[]>('api/admin/course',httpoptions);
 }
  
 }

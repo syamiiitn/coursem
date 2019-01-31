@@ -1,0 +1,71 @@
+
+
+
+
+
+
+<div class="container-fluid">
+  <div class="jumbotron " style="background-color:darkgrey">
+   
+  
+    
+  <div class="row">
+      <div class="col-sm">
+         <h3 class="text-center" style="color:mediumvioletred; text-decoration:underline">ANGULAR</h3>
+      </div>
+  </div> 
+  
+       <div class="row">
+       
+         <div class="col-sm-6 mt-5">
+          <img src="assets/c++-.png" width="200px" height="200">
+      </div>
+           <div class="col-sm-6 mt-5">
+           
+            <p>C++ is a general-purpose programming language. It has imperative, object-oriented and generic programming features, while also providing facilities for low-level memory manipulation.</p>
+            <p>“C++ is a statically-typed, free-form, (usually) compiled, multi-paradigm, intermediate-level general-purpose middle-level programming language.”
+                In simple terms, C++ is a sophisticated, efficient and a general-purpose programming language based on C. It was developed by Bjarne Stroustrup in 1979.
+                Many of today’s operating systems, system drivers, browsers and games use C++ as their core language. This makes C++ one of the most popular languages today.
+                Since it is an enhanced/extended version of C programming language, C and C++ are often denoted together as C/C++..</p>
+                <h3>Contents</h3>
+                Introduction
+                <p></p>
+                <p></p>
+              </div>     
+                
+          </div>
+        </div>
+        
+  
+        <div class="row ">
+          <div class="col-sm-2"></div>
+           <div class="col-sm-6">
+             
+             
+             <button type="button" class="btn btn-success form-control" (click)="download()">Sample File</button>
+             
+            
+           </div>
+           
+           
+  
+        </div>
+        <div class="table-responsive-sm mt-5">
+          <table class="table table-striped">
+            <thead>
+              <th>Course-Name</th>
+              <th>Price</th>
+              <th>Add</th>
+            </thead>
+            <tr *ngFor="let i of data">
+             <td>{{i.coursename}}</td>
+             <td>{{i.price}}</td>
+              <button type="button" class="btn btn-success" (click)="addCart(i)">Add TO Cart</button>
+            </tr>
+          </table>
+        </div>
+      </div>
+        <router-outlet></router-outlet>
+    
+  
+  

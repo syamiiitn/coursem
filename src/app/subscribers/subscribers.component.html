@@ -1,11 +1,11 @@
-<div class="jumbotron bg-secondary">
+<div class="jumbotron bg-info">
  <h1 class="text-danger text-center pt-5 " style="text-decoration:underline" >Subscribers Detailes</h1>
 
  <div class="row">
     <div class="col-sm-3"></div>
 
       <div class="col-sm-6 text-center">
-        <div class="jumbotron bg-info">
+        <div class="jumbotron bg-secondary">
    
            <input type="text" class="form-control" placeholder="search....." name="searchTerm" [(ngModel)]=searchTerm>
    
@@ -15,7 +15,7 @@
  </div>
 
 
-
+ <div class="table-responsive">
  <table class="table table pt-5">
    <thead>
      <th>CustomarId</th>
@@ -32,6 +32,7 @@
      <td>{{i.contactno}}</td>
    </tr>
  </table>
+ </div>
  <router-outlet></router-outlet>
 <!-- <div class="mt-5">
  <form #ref="ngForm" (ngSubmit)="AddData(ref.value)">

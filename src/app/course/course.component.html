@@ -26,7 +26,7 @@
           <label for="four" class="text-white pt-4" >Courses Details :  </label>
           </td>
           <td>
-          <textarea name ="cmnts"  name="cdetailes" id="four" rows="4" cols="4" placeholder="enter here" class="form-control pd-5" [(ngModel)]=b></textarea>
+          <textarea name ="cmnts"  name="cdetailes" id="four" rows="3" cols="3" placeholder="enter here" class="form-control pd-5" [(ngModel)]=b></textarea>
           </td>
       </tr>
 
@@ -44,7 +44,7 @@
           <label for="four" class="text-white pt-4" >Author Detailes :  </label>
           </td>
           <td>
-          <textarea name ="cmnts"  name="adetailes" id="four" rows="4" cols="4" placeholder="enter here" class="form-control pd-5"[(ngModel)]=d></textarea>
+          <textarea name ="cmnts"  name="adetailes" id="four" rows="3" cols="3" placeholder="enter here" class="form-control pd-5"[(ngModel)]=d></textarea>
           </td>
           </tr>
       <tr>
@@ -107,6 +107,7 @@
 
           <div class="jumbotron bg-success">
           <h1 class="text-danger text-center pt-5 " style="text-decoration:underline" >Courses Detailes</h1>
+          <div class="table-responsive">
           <table class="table table pt-5">
             <thead>
               <th>Courseid</th>
@@ -136,6 +137,7 @@
              <td><button (click)="editdata(i)" class="btn btn-primary" data-toggle="modal" data-target="#m">Edit</button></td>
             </tr>
           </table>
+          </div>
           <router-outlet></router-outlet>
      </div>
     </div>
@@ -252,7 +254,6 @@
             </div>
             </div>
             </div>
-            "cdetailes": "jldvgls"
             </div>
             </div>
             </div>

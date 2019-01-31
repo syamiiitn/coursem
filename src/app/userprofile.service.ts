@@ -14,12 +14,13 @@ export class UserprofileService {
   //reading data from server.js
   readProfile():Observable<any>
   {
-    return this.http.get('/user/profile');
+    return this.http.get('api/user/profile');
   }
   readsaveprofile(v)
   {
-    this.http.put('/user/profile',v).subscribe();
+    this.http.put('api/user/profile',v).subscribe();
     console.log(v);
+    
   }
 
 }

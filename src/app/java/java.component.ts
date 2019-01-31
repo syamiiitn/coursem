@@ -9,14 +9,21 @@ import {JcourseService} from '../jcourse.service';
 providers: [{provide:'Window',useValue:window}]
 })
 export class JavaComponent  {
-  data:any={};
+  data:any[]=[];
 
  constructor(private router:Router,private jcourse:JcourseService) { }
 
-  // ngOnInit()
-  //  {
-  //   this.jcourse.readdata().subscribe(temp=>{this.data=temp
-  //   })  }
+  ngOnInit()
+   {
+      this.jcourse.readdata().subscribe(temp=>{this.data=temp
+    }) 
+   }
+
+    addCart(v)
+    {
+      this.jcourse.readdata1(v);
+      this.router.navigate(['user/cart']);
+    }
   download(){
     
      //download pdf

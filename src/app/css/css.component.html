@@ -1,0 +1,70 @@
+<div class="container-fluid">
+  <div class="jumbotron " style="background-color:hotpink">
+   
+  
+    
+  <div class="row">
+      <div class="col-sm">
+         <h3 class="text-center" style="color:darkblue; text-decoration:underline">CSS</h3>
+      </div>
+  </div> 
+  
+       <div class="row">
+        
+           
+         <div class="col-sm-6 mt-5">
+          <img src="assets/css-.png" width="280px" height="250">
+      </div>
+           <div class="col-sm-4 mt-5">
+            <p>Cascading Style Sheets is a style sheet language used for describing the presentation of a document written in a markup language like HTML. CSS is a cornerstone technology of the World Wide Web, alongside HTML and JavaScript.</p>
+            <ol>
+              <li>CSS describes how HTML elements are to be displayed on screen, paper, or in other media</li>
+              <li>CSS saves a lot of work. It can control the layout of multiple web pages all at once</li>
+              <li>External stylesheets are stored in CSS files</li>
+              <li>CSS is used to define styles for your web pages, including the design, layout and variations in display for different devices and screen sizes. </li>
+             </ol>
+          
+              
+                <h3>Contents</h3>
+                Introduction
+                <p></p>
+                <p></p>
+                 
+                
+          </div>
+        
+          
+        </div>
+        
+  
+        <div class="row mt-" >
+          <div class="col-sm-2"></div>
+           <div class="col-sm-6">
+             
+             
+             <button type="button" class="btn btn-success form-control" (click)="download()">Sample File</button>
+             
+            
+           </div>
+           
+           
+  
+        </div>
+        <div class="table-responsive-sm mt-5">
+          <table class="table table-striped">
+            <thead>
+              <th>Course-Name</th>
+              <th>Price</th>
+              <th>Add</th>
+            </thead>
+            <tr *ngFor="let i of data">
+             <td>{{i.coursename}}</td>
+             <td>{{i.price}}</td>
+              <button type="button" class="btn btn-success" (click)="addCart(i)">Add TO Cart</button>
+            </tr>
+          </table>
+        </div>
+      </div>
+        <router-outlet></router-outlet>
+    
+  

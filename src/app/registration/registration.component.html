@@ -22,10 +22,9 @@
 
       <div class="form-group">
            <label><b>Password:</b></label>
-             <input type="password" name="password" id="c" #ref3="ngModel"  [(ngModel)]="password" pattern="[A-Z]\d." minlength="6" class="form-control">
-              <label *ngIf="ref3.errors?.pattern && ref3.invalid"><p>First letter is capital</p>
-                <p>second letter is number</p>
-               <p>remaining as your wish</p>
+             <input type="password" name="password" id="c" #ref3="ngModel"  [(ngModel)]="password" pattern="[A-Z]\d." minlength="8" class="form-control">
+              <label *ngIf="ref3.errors?.pattern && ref3.invalid"><p>password must contains 8 charectors</p>
+               <p>one number</p>
             </label>
      </div>
 

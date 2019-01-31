@@ -24,6 +24,16 @@ import { SearchPipe } from './search.pipe';
   import { from } from 'rxjs/internal/observable/from';
 import { ClistComponent } from './clist/clist.component';
 import { JavaComponent } from './java/java.component';
+import { UcarouselComponent } from './ucarousel/ucarousel.component';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { AuthorizService } from 'src/app/authoriz.service';
+import { HtmlComponent } from './html/html.component';
+import { CssComponent } from './css/css.component';
+import { AngularComponent } from './angular/angular.component';
+import { CcprogComponent } from './ccprog/ccprog.component';
+import { Search1Pipe } from './search1.pipe';
+
+
 
 @NgModule({
   declarations: [
@@ -46,14 +56,20 @@ import { JavaComponent } from './java/java.component';
     SearchPipe,
     ClistComponent,
     JavaComponent,
-    
+    UcarouselComponent,
+    HtmlComponent,
+    CssComponent,
+    AngularComponent,
+    CcprogComponent,
+    Search1Pipe
+  ],
    
-  ],
-  imports: [
+ 
+    imports: [
     BrowserModule,FormsModule,HttpClientModule,
-    AppRoutingModule,
-  ],
-  providers: [],
+    AppRoutingModule ],
+
+  providers:[{provide:HTTP_INTERCEPTORS,useClass:AuthorizService,multi:true}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

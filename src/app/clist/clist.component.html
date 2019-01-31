@@ -1,7 +1,7 @@
 
 
 <div class="container-fluid">
-<div class="jumbotron bg-warning">
+<div class="jumbotron " style="background-color:aqua">
  
 
   
@@ -13,6 +13,9 @@
 
      <div class="row">
        <div class="col-sm-2"></div>
+       <div class="col-sm-4 mt-5">
+        <img src="assets/c-p.png" width="250px" height="250">
+    </div>
          <div class="col-sm-4 mt-5">
          
         
@@ -25,28 +28,38 @@
               
         </div>
         
-        <div class="col-sm-4 mt-5">
-            <img src="assets/c++.jpg" width="250px" height="250">
-        </div>
+        
         <div class="col-sm-1"></div>
       </div>
       
 
-      <div class="row">
+      <div class="row ">
         <div class="col-sm-2"></div>
          <div class="col-sm-6">
            
            
            <button type="button" class="btn btn-success form-control" (click)="download()">Sample File</button>
-
-           <a routerLink="login" class="text-primary"><b>Main File</b></a>
+           
           
          </div>
          
          
 
       </div>
-        
+      <div class="table-responsive-sm mt-5">
+        <table class="table table-striped">
+          <thead>
+            <th>Course-Name</th>
+            <th>Price</th>
+            <th>Add</th>
+          </thead>
+          <tr *ngFor="let i of data">
+           <td>{{i.coursename}}</td>
+           <td>{{i.price}}</td>
+            <button type="button" class="btn btn-success" (click)="addCart(i)">Add TO Cart</button>
+          </tr>
+        </table>
+      </div>
     </div>
       <router-outlet></router-outlet>
   

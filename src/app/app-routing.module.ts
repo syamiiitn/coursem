@@ -18,17 +18,14 @@ import { CourseComponent } from 'src/app/course/course.component';
 import { AauthorsComponent } from 'src/app/aauthors/aauthors.component';
 import { ClistComponent } from 'src/app/clist/clist.component';
 import { JavaComponent } from 'src/app/java/java.component';
+import { UcarouselComponent } from 'src/app/ucarousel/ucarousel.component';
+import { HtmlComponent } from 'src/app/html/html.component';
+import { CssComponent } from 'src/app/css/css.component';
+import { AngularComponent } from 'src/app/angular/angular.component';
+import { CcprogComponent } from 'src/app/ccprog/ccprog.component';
 
 const routes: Routes = [{path:'home',component:HomeComponent,
 children:[{path:'carousel',component:CarouselComponent},
-{path:'home/clist',component:ClistComponent},
-{path:'home/clist/login',component:LoginComponent},
-{path:'home/clist/login/registration',component:RegistrationComponent},
-{path:'home/clist/login/registration/login',component:LoginComponent},
-{path:'home/java',component:JavaComponent},
-{path:'home/java/login',component:LoginComponent},
-{path:'home/java/login/registration',component:RegistrationComponent},
-{path:'home/java/login/registration/login',component:LoginComponent},
 {path:'whythis',component:WhythisComponent},
 {path:'authors',component:AuthorsComponent},
 {path:'login',component:LoginComponent},{path:'registration',component:RegistrationComponent}]},
@@ -36,12 +33,32 @@ children:[{path:'carousel',component:CarouselComponent},
 {path:'home/registration/login',component:LoginComponent},
 
 
-{path:'admin',component:AdminComponent,children:[{path:'',component:SubscribersComponent},{path:'subscribers',component:SubscribersComponent},
+{path:'admin',component:AdminComponent,
+children:[{path:'',component:CarouselComponent},
+{path:'carousel',component:CarouselComponent},
+{path:'subscribers',component:SubscribersComponent},
 {path:'purchasers',component:PurchagersComponent},
-{path:'course',component:CourseComponent},{path:'aauthors',component:AauthorsComponent}]},
+{path:'course',component:CourseComponent},
+{path:'aauthors',component:AauthorsComponent}]},
 
-{path:'user',component:UserComponent,children:[{path:'',component:UserprofileComponent},
-{path:'cart',component:CartComponent},{path:'history',component:HistoryComponent}]},
+{path:'user',component:UserComponent,
+children:[{path:'',component:UcarouselComponent},
+{path:'ucarousel',component:UcarouselComponent},
+{path:'profile',component:UserprofileComponent},
+{path:'cart',component:CartComponent},
+{path:'history',component:HistoryComponent},
+{path:'ucarousel/java',component:JavaComponent},
+{path:'ucarousel/clist',component:ClistComponent},
+{path:'ucarousel/html',component:HtmlComponent},
+{path:'ucarousel/css',component:CssComponent},
+{path:'ucarousel/angular',component:AngularComponent},
+{path:'ucarousel/ccprog',component:CcprogComponent},
+{path:'java',component:JavaComponent},
+{path:'clist',component:ClistComponent},
+{path:'html',component:HtmlComponent},
+{path:'css',component:CssComponent},
+{path:'angular',component:AngularComponent},
+{path:'ccprog',component:CcprogComponent}]},
 {path:'',redirectTo:'home/carousel',pathMatch:'full'}];
 
 
